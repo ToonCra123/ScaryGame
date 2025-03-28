@@ -42,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetAxis("Mouse Y") != 0)
         {
-            // clamp using mathf.Clamp
             float xRotation = playerHead.transform.localEulerAngles.x - Input.GetAxis("Mouse Y");
             if (xRotation > 180)
             {
