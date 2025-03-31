@@ -52,7 +52,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkPlayer Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3565771593081986147, guid: d7c844cee7a619a4f951efb0babc7af4, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8994161839531201549, guid: d7c844cee7a619a4f951efb0babc7af4, type: 3}
     m_AddedGameObjects: []

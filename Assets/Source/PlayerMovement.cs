@@ -1,9 +1,15 @@
+using System;
+using System.Net;
+using System.Net.Sockets;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f; // Speed of the player movement
     public GameObject playerHead;
+
+    public Boolean shouldConnectServer = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,5 +57,7 @@ public class PlayerMovement : MonoBehaviour
             playerHead.transform.localEulerAngles = new Vector3(xRotation, playerHead.transform.localEulerAngles.y, playerHead.transform.localEulerAngles.z);
 
         }
+
     }
+    
 }
