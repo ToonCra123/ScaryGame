@@ -6,10 +6,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f; // Speed of the player movement
+    public float jumpForce = 2f;
     public GameObject playerHead;
-
-    public Boolean shouldConnectServer = false;
-
+    private bool isGrounded;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,6 +57,28 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+
     }
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            isGrounded = false;
+        }
+    }
+
 }
